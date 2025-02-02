@@ -327,6 +327,7 @@
             Shery.mouseFollower();
             Shery.makeMagnet(".magnet");
         }
+
         document.addEventListener('DOMContentLoaded', function () {
             const navButtons = document.querySelectorAll('.nav-button');
             const contentDivs = document.querySelectorAll('.content-div');
@@ -378,6 +379,15 @@
                     navbar.classList.remove('scroll-active');
                 }
             };
+
+            // Disable Ctrl+U (View Source)
+            document.addEventListener('keydown', function (e) {
+                // Check if 'Ctrl + U' is pressed
+                if (e.ctrlKey && e.key === 'u') {
+                    e.preventDefault(); // Disable the default action
+                    alert("Viewing the page source is disabled on this page.");
+                }
+            });
         });
     </script>
 </body>
